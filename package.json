@@ -1,6 +1,6 @@
 {
   "name": "require-php",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Allow a node.js program to require() a PHP file",
   "main": "index.js",
   "dependencies": {
