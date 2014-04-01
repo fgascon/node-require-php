@@ -1,0 +1,26 @@
+{
+  "name": "node-require-php",
+  "version": "0.0.0",
+  "description": "Allow a node.js program to require() a PHP file",
+  "main": "index.js",
+  "dependencies": {
+    "dnode": "~1.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fgascon/node-require-php"
+  },
+  "keywords": [
+    "php",
+    "require"
+  ],
+  "author": "fgascon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fgascon/node-require-php/issues"
+  }
+}
