@@ -1,5 +1,5 @@
 {
-  "name": "node-require-php",
+  "name": "require-php",
   "version": "0.0.1",
   "description": "Allow a node.js program to require() a PHP file",
   "main": "index.js",
