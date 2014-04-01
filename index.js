@@ -4,24 +4,26 @@ var spawn = require('child_process').spawn;
 var dnode = require('dnode');
 
 var PHP_ENTRY_SCRIPT = __dirname+'/php/require.php';
+var parentModuleDir = path.dirname(module.parent.filename);
 
 module.exports = requirePhp;
 
 var loadedModules = {};
 
 function requirePhp(modulePath, callback){
-	var absoluteModulePath = path.resolve(modulePath);
-	if(loadedModules[absoluteModulePath]){
-		var module = loadedModules[absoluteModulePath];
+	var fullpath = path.resolve(parentModuleDir, modulePath);
+	
+	if(loadedModules[fullpath]){
+		var module = loadedModules[fullpath];
 		process.nextTick(function(){
 			callback(module);
 		});
 	}else{
-		createPhpModule(absoluteModulePath, function(err, module){
+		createPhpModule(fullpath, function(err, module){
 			if(err){
 				return callback(err);
 			}
-			loadedModules[absoluteModulePath] = module;
+			loadedModules[fullpath] = module;
 			callback(null, module);
 		});
 	}
