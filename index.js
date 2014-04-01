@@ -25,7 +25,6 @@ function requirePhp(modulePath, callback){
 }
 
 function createPhpModule(modulePath, callback){
-	console.log(modulePath);
 	var d = dnode();
 	var server = net.createServer(function(connection){
 		d.pipe(connection).pipe(d);
@@ -45,7 +44,6 @@ function createPhpModule(modulePath, callback){
 			console.error(err);
 		});
 		childProcess.on('exit', function(code){
-			console.log("Process exited with code %d", code);
 			server.close();
 		});
 		childProcess.unref();
