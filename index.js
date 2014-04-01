@@ -17,9 +17,12 @@ function requirePhp(modulePath, callback){
 			callback(module);
 		});
 	}else{
-		createPhpModule(absoluteModulePath, function(module){
+		createPhpModule(absoluteModulePath, function(err, module){
+			if(err){
+				return callback(err);
+			}
 			loadedModules[absoluteModulePath] = module;
-			callback(module);
+			callback(null, module);
 		});
 	}
 }
@@ -56,6 +59,6 @@ function createPhpModule(modulePath, callback){
 		remote.close = function(){
 			server.close();
 		};
-		callback(remote);
+		callback(null, remote);
 	});
 }

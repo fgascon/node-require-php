@@ -1,6 +1,6 @@
 var requirePhp = require('..');
 
-requirePhp('test.php', function(test){
+requirePhp('test.php', function(err, test){
 	console.log('module loaded');
 	
 	test.mult(4, 5, function(result){
