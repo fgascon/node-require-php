@@ -8,7 +8,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "install": "cd php/dnode-php && composer install"
   },
   "repository": {
     "type": "git",
