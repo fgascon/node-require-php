@@ -1,0 +1,4 @@
+[submodule "dnode-php"]
+    path = php/dnode-php
+    url = https://github.com/bergie/dnode-php.git
+
